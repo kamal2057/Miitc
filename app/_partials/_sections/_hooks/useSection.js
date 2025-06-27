@@ -17,7 +17,7 @@ export const useSection = (key) => {
     useEffect(() => {
         setContent(section?.content);
         setElements(section?.elements);
-    }, []);
+    }, [section]);
 
     return {
         content,

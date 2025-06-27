@@ -93,7 +93,9 @@ function redirectTo(url, req) {
 }
 
 export const config = {
-    matcher: [
-        '/((?!api|static|icon*|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
-    ],
+  matcher: [
+    // Match all paths EXCEPT:
+    // /api, /static, /_next/static, /_next/image, /favicon.ico, /icon*, /sitemap.xml, /robots.txt
+    '/((?!api|static|_next/static|_next/image|favicon\.ico|robots\.txt|sitemap\.xml|icon).*)',
+  ],
 };

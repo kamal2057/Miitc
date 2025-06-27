@@ -11,15 +11,16 @@ export const Deposit = ({ course = null }) => {
     const [paymentMethods, setPaymentMethods] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        (async () => {
-            setLoading(true);
-            const { imagePath, paymentMethods } = await getPaymentMethods();
-            setImagePath(imagePath);
-            setPaymentMethods(paymentMethods);
-            setLoading(false);
-        })();
-    }, []);
+useEffect(() => {
+  (async () => {
+    setLoading(true);
+    const { imagePath, paymentMethods } = await getPaymentMethods();
+    setImagePath(imagePath);
+    setPaymentMethods(paymentMethods);
+    setLoading(false);
+  })();
+}, [getPaymentMethods]); // <-- add it here
+
 
 
     return (
